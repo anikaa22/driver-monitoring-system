@@ -74,7 +74,6 @@ def detect_drowsiness(frame, count, score, display=False):
 
     if display:
         font = cv2.FONT_HERSHEY_COMPLEX
-        cv2.putText(frame, f"Score: {score}", (10, frame.shape[0] - 10), font, 1, (20,255,0), 2)
         if score >= SCORE_THRESHOLD:
             cv2.putText(frame, "Drowsy", (frame.shape[1] - 130, 40), font, 1, (10,10,255), 2)
             drowsy = True
