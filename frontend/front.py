@@ -112,7 +112,8 @@ behavior_data = pd.DataFrame({
     "Driver": random.choices(drivers, k=10),
     "Drowsiness Alerts": [random.randint(0, 2) for _ in range(10)],
     "Phone Usage": [random.randint(0, 3) for _ in range(10)],
-    "Harsh Brakes": [random.randint(0, 4) for _ in range(10)],
+    "Talking": [random.randint(0, 4) for _ in range(10)],
+    "Drinking": [random.randint(0, 4) for _ in range(10)],
     "Rating": [round(random.uniform(3.0, 5.0), 2) for _ in range(10)],
 })
 
