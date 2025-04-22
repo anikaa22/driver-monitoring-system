@@ -3,7 +3,7 @@ import numpy as np
 
 class SpeechDetector:
     def __init__(self, rate=16000, frame_duration_ms=30, buffer_size=100, alert_threshold=100):
-        self.vad = webrtcvad.Vad(1)
+        self.vad = webrtcvad.Vad(2)
         self.RATE = rate
         self.FRAME_DURATION_MS = frame_duration_ms
         self.FRAME_SIZE = int(self.RATE * (self.FRAME_DURATION_MS / 1000))
@@ -59,7 +59,7 @@ class SpeechDetector:
                 self.alert_triggered = False
 
         if self.talk_time >= self.alert_threshold and not self.alert_triggered:
-            print("🚨 Alert: Driver has been talking for too long! 🚨")
+            print(" Alert: Driver has been talking for too long! ")
             self.alert_triggered = True
 
         return self.talking, self.alert_triggered
